@@ -11,12 +11,12 @@ from sklearn.decomposition import PCA
 
 class Regressor(BaseEstimator):
     def __init__(self):
-        self.clf1 = Pipeline([('scaler', StandardScaler()),
+        self.clf = Pipeline([('scaler', StandardScaler()),
                                 ("PCA", PCA(n_components=20)),
                                   ("GB",GradientBoostingRegressor(n_estimators = 500, max_depth=6))])
 
     def fit(self, X, y):
-        self.clf1.fit(X, y.reshape((y.shape[0],)))
+        self.clf.fit(X, y.reshape((y.shape[0],)))
 
 
     def predict(self, X):
