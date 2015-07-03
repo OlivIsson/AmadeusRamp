@@ -11,7 +11,7 @@ from sklearn.decomposition import PCA
 
 class Regressor(BaseEstimator):
     def __init__(self):
-        self.clf = RandomForestRegressor(n_estimators=25, max_depth=100, max_features=22,n_jobs=-1)
+        self.clf = RandomForestRegressor(n_estimators=501, max_depth=100, max_features=22,n_jobs=-1)
         #self.clf = Pipeline([('scaler', StandardScaler()),
         #                     ("RF", RandomForestRegressor(n_estimators=50, max_depth = 10))])
         self.clf1 = Pipeline([('scaler', StandardScaler()),
