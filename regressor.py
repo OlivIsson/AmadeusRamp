@@ -27,4 +27,4 @@ class Regressor(BaseEstimator):
         #list_clf=[self.clf0.predict(X[:,0:102]),self.clf1.predict(X[:,102:])]
         #list_clf=[self.clf0.predict(X[:,0:102])]
         #return sum(list_clf)/float(len(list_clf))
-        return self.clf0.predict(X) * 0.41 + self.clf1.predict(X) * 0.39 +  self.clf2.predict(X) * 0.2
+        return self.clf0.predict(X[:,0:102]) * 0.5 + self.clf1.predict(X[:,0:102]) * 0.3 +  self.clf2.predict(X[:,102:]) * 0.2
