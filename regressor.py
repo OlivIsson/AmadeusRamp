@@ -30,4 +30,4 @@ class Regressor(BaseEstimator):
     def predict(self, X):
 
         #return sum(list_clf)/float(len(list_clf))
-        return self.clf.predict(X) * 0.52 + self.clf1.predict(X) * 0.48
+        return self.clf.predict(X) * 0.6 + self.clf1.predict(X) * 0.4
