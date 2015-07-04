@@ -1,3 +1,6 @@
+import pandas as pd
+import os
+
 class FeatureExtractor(object):
     def __init__(self):
         pass
@@ -51,6 +54,13 @@ class FeatureExtractor(object):
         X_encoded = X_encoded.drop('quarter', axis=1)
         X_encoded = X_encoded.drop('TotalFare', axis=1)
         X_encoded = X_encoded.drop('TotalPax', axis=1)
+        
+        X_encoded = X_encoded.drop('weekday', axis=1)
+        X_encoded = X_encoded.drop('week', axis=1)
+        X_encoded = X_encoded.drop('month', axis=1)
+        X_encoded = X_encoded.drop('std_wtd', axis=1)
+        X_encoded = X_encoded.drop('WeeksToDeparture', axis=1)        
+
         
         aaa=X_encoded['AverageFare']
         ii=np.isnan(X_encoded['AverageFare'])
